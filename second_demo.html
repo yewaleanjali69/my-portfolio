@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+	<!-- font awesome links -->
+	<script src="https://kit.fontawesome.com/d5a4936763.js" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+
+		* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #4d636f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+/* Logo */
+.logo {
+    height: 60px;
+    background-color: #3a4b53;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logo:hover {
+    background-color: #cccccc;
+    color: black;
+}
+
+/* Navbar icons */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: auto;
+}
+
+.nav-icons a {
+    height: 60px;
+    min-width: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+}
+
+.nav-icons a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Notification badge */
+.badge {
+    background-color: #4caf50;
+    color: white;
+    font-size: 14px;
+    padding: 4px 9px;
+    border-radius: 15px;
+    margin-left: 5px;
+}
+
+/* Profile image */
+.profile {
+    margin-left: auto;
+    padding: 0 20px;
+}
+
+.profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 600px) {
+    .logo {
+        padding: 0 15px;
+        gap: 10px;
+    }
+
+    .nav-icons a {
+        min-width: 40px;
+        font-size: 16px;
+    }
+
+    .profile {
+        padding: 0 8px;
+    }
+}
+		
+		.shadow{
+			border-shadow:0px 0px 20px 0px black;
+		}
+
+		.postbtn{
+			height: 30px;
+			width: 80px;
+			background-color: #57786b;
+			color: white;
+			margin-top:5px;
+			border: none;
+		}
+
+		.infobtn:hover{
+			background-color: gray;
+		}
+
+		.size{
+			width:20px;
+		}
+
+		.btn{
+    margin-right: 10px;
+    }
+      .btn-accept {
+            background-color: #91cd95;
+            color: white;
+            border: none;
+            border-radius: 0;
+            padding: 9px;
+        }
+
+        .btn-reject {
+            background-color: #fa8985;
+            color: white;
+            border: none;
+            border-radius: 0;
+            padding: 9px;
+        }
+
+         .btn-accept:hover {
+            background-color: #78bd7e;
+        }
+
+        .btn-reject:hover {
+            background-color: #f36f6a;
+        }
+
+        /* First Card */
+        .group-card {
+            background-color: #829eab;
+            color: white;
+            padding: 10px 26px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 34px;
+        }
+
+        .group-item: {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            font-size: 28px;
+            height: 65px;
+        }
+
+        .group-item i: {
+            width: 24px;
+            text-align: center;
+            font-size: 23px;
+        }
+
+               /* Second Card */
+        .interest-card {
+            background-color: white;
+            padding: 10px 10px 10px;
+            border-radius: 7px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 34px;
+        }
+
+        .interest-card h4 {
+            font-size: 9px;
+            font-weight: normal;
+            margin: 0 0 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            margin: 0 2px 5px 0;
+            font-size: 9px;
+            line-height: 15px;
+        }
+
+        .tag-dark {
+            background-color: #344750;
+            color: white;
+        }
+
+        .tag-blue {
+            background-color: #607d8b;
+            color: white;
+        }
+
+        .tag-light-blue {
+            background-color: #a5b8c1;
+            color: white;
+        }
+
+        .tag-grey {
+            background-color: #e0e5e8;
+            color: black;
+        }
+
+        .tag-white {
+            background-color: #f5f6f7;
+            color: black;
+        }
+
+         /* Third Card */
+        .notice-card {
+            position: relative;
+            background-color: #dfe6e9;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            padding: 12px 12px 12px;
+        }
+
+        .notice-card h4 {
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+
+        .notice-card p {
+            font-size: 12px;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 61px;
+            height: 58px;
+            border: none;
+            background-color: #bdcdd4;
+            color: black;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background-color: #a9bdc6;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 576px) {
+            body {
+                padding: 10px;
+            }
+
+            .group-card {
+                padding: 5px 18px;
+            }
+
+            .group-item {
+                font-size: 12px;
+                gap: 20px;
+            }
+
+            .interest-card {
+                padding: 20px 15px;
+            }
+
+            .notice-card {
+                padding: 25px 15px;
+            }
+
+            .notice-card p {
+                font-size: 12px;
+                padding-right: 5px;
+            }
+        }
+
+
+
+        ```css
+.footer {
+    margin-top: 35px;
+    margin-left: -18px;
+    margin-right: -18px;
+    color: white;
+}
+
+.footer-top {
+    background-color: #435963;
+    padding: 25px;
+    height: 118px;
+}
+
+.footer-top h3 {
+    font-size: 25px;
+    font-weight: normal;
+    margin-top: 18px;
+    color: white;
+}
+
+.footer-bottom {
+    background-color: #303f46;
+    padding: 10px 25px;
+    height: 80px;
+    color: white;
+}
+
+.footer-bottom p {
+    font-size: 22px;
+    margin-top: 15px;
+    color: white;
+}
+```
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #4d636f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+/* Logo */
+.logo {
+    height: 50px;
+    background-color: #3a4b53;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logo:hover {
+    background-color: #cccccc;
+    color: black;
+}
+
+/* Navbar icons */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: auto;
+}
+
+.nav-icons a {
+    height: 60px;
+    min-width: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+}
+
+.nav-icons a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Notification badge */
+.badge {
+    background-color: #4caf50;
+    color: white;
+    font-size: 14px;
+    padding: 4px 9px;
+    border-radius: 15px;
+    margin-left: 5px;
+}
+
+/* Profile image */
+.profile {
+    margin-left: auto;
+    padding: 0 20px;
+}
+
+.profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 600px) {
+    .logo {
+        padding: 0 15px;
+        gap: 10px;
+    }
+
+    .nav-icons a {
+        min-width: 40px;
+        font-size: 16px;
+    }
+
+    .profile {
+        padding: 0 8px;
+    }
+}
+
+
+
+	</style>
+</head>
+<body class="p-3">
+
+	<nav class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-house"></i>
+        <span>Logo</span>
+    </div>
+
+    <div class="nav-icons">
+        <a href="#"><i class="fa-solid fa-earth-americas"></i></a>
+        <a href="#"><i class="fa-solid fa-user"></i></a>
+        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+
+        <a href="#" class="notification">
+            <i class="fa-solid fa-bell"></i>
+            <span class="badge">3</span>
+        </a>
+    </div>
+
+    <div class="profile">
+        <img src="https://www.w3schools.com/w3images/avatar2.png"
+             alt="Profile">
+    </div>
+
+</nav>
+<br><br>
+
+
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-4">
+				<div class="card shadow">
+					<div class="card-body">
+					<p class="text-center">My Profile</p>
+					<center>
+					<img src="https://www.w3schools.com/w3images/avatar3.png" class="rounded-circle" height="90px">
+				</center><hr>
+				<p><i class="fa-solid fa-pencil"></i>&nbsp;&nbsp;&nbsp;Designer, UI</p>
+				<p><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;London, UK</p>
+				<p><i class="fa-solid fa-cake-candles"></i>&nbsp;&nbsp;&nbsp;April 1, 1988</p>
+					</div>
+				</div><br>
+                             
+    <!-- First Card: Groups -->
+
+				    <div class="group-card">
+						<div class="group-item ">
+                            <i class="fa-regular fa-circle"></i>
+                            <span>My Groups</span>
+                        </div>
+
+                        <div class="group-item ">
+                              <i class="fa-regular fa-calendar-check"></i>
+                              <span>My Events</span>
+                        </div>
+
+                       <div class="group-item ">
+                               <i class="fa-solid fa-users"></i>
+                               <span>My Photos</span>
+                        </div>
+                    </div>
+
+
+                     <!-- Second Card: Interests -->
+    <div class="interest-card">
+
+        <h3 class="text-secondary">Interests</h4>
+
+        <div>
+            <span class="tag tag-dark">News</span>
+            <span class="tag tag-dark">W3Schools</span>
+            <span class="tag tag-dark">Labels</span>
+            <span class="tag tag-dark">Games</span>
+            <span class="tag tag-blue">Friends</span>
+            <span class="tag tag-blue">Games</span>
+            <span class="tag tag-blue">Friends</span>
+            <span class="tag tag-light-blue">Food</span>
+            <span class="tag tag-grey">Design</span>
+            <span class="tag tag-grey">Art</span>
+            <span class="tag tag-white">Photos</span>
+        </div>
+
+    </div>
+
+             <!-- Third Card: Notification -->
+    <div class="notice-card" id="notice">
+
+        <button class="close-btn"
+                onclick="document.getElementById('notice').style.display='none'"
+                aria-label="Close notification">
+            &times;
+        </button>
+
+        <h4>Hey!</h4>
+
+        <p>People are looking at your profile. Find out who.</p>
+
+    </div>
+
+ 
+					</div>
+					
+			
+
+			<div class="col-4">
+				<div class="card shadow">
+					<div class="card-body">
+						<p class="text-secondary">Social Media template by w3.css</p>
+						<input type="text" placeholder="Status: Feeling Blue" class="form-control">
+						<button class="postbtn">
+							<i class="fa-solid fa-pencil"></i>Post
+						</button>
+					</div>
+				</div><br>
+
+				<div class="card shadow mt-3">
+				<div class="card-body">
+					<img src="https://www.w3schools.com/w3images/avatar2.png" class="rounded-circle" height="60px">
+					<span>John Doe</span>
+					<span class="float-right">1 min</span>
+					<hr>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+					<div class="row">
+						<div class="col-6">
+							<img src="https://www.w3schools.com/w3images/lights.jpg" class="w-100">
+							</div>
+	
+						<div class="col-6">
+							<img src="https://www.w3schools.com/w3images/nature.jpg" class="w-100">
+						</div>
+
+								<button class="btn btn-secondary mt-3 btn">
+						<i class="fa-solid fa-thumbs-up"></i>Like
+					</button>
+                      
+					<button class="btn btn-secondary mt-3 btn">
+						<i class="fa-solid fa-comment"></i> Comment
+					</button>
+
+					</div>
+				</div>
+					
+
+
+				</div><br>
+
+				<div class="card shadow">
+					<div class="card-body">
+						<img src="https://www.w3schools.com/w3images/avatar6.png" class="rounded-circle" height="70px">
+
+						<span>John Doe</span>
+						<span class="float-right">16 min</span>
+						<hr>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+						<button class="btn btn-secondary mt-3 btn">
+						<i class="fa-solid fa-thumbs-up"></i>Like
+					</button>
+                      
+					<button class="btn btn-secondary mt-3 btn">
+						<i class="fa-solid fa-comment"></i> Comment
+					</button>
+					</div>
+				</div><br>
+
+				<div class="card shadow">
+					<div class="card-body">
+						<img src="https://www.w3schools.com/w3images/avatar6.png" class="rounded-circle" height="70px">
+						<span>Angie Jane</span>
+						<span class="float-right">32 min</span><hr>
+						<p>Have you seen this?</p>
+						<img src="https://www.w3schools.com/w3images/nature.jpg" class="w-100">
+						<br>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<button class="btn btn-secondary mt-3 btn">
+						<i class="fa-solid fa-thumbs-up"></i>Like
+					</button>
+                      
+					<button class="btn btn-secondary mt-3 btn">
+						<i class="fa-solid fa-comment"></i> Comment
+					</button>
+
+					</div>
+				</div>
+				
+			</div>
+		
+	<div class="col-4">
+				<div class="card shadow">
+					<div class="card-body">
+						<p class="text-center">Upcoming Events:
+						</p>
+						<img src="https://www.w3schools.com/w3images/forest.jpg" class="w-100">
+						<p class="text-center mt-3 font-weight-bold">Holiday</p>
+					<p class="text-center">Friday 15:00</p>
+					<button class="btn btn-light btn-block infobtn">Info</button>
+
+					</div>
+				 </div>
+				<br>
+				<div class="card shadow">
+					<div class="card-body">
+						<p class="text-center">Friend Request</p>
+						<center>
+							<img src="https://www.w3schools.com/w3images/avatar6.png" height="200x">
+						</center><br>
+						<p class="text-center">Jane Doe</p>
+
+						<div class="row g-0">
+
+							<div class="col-6">
+								 <button class="btn btn-accept w-100">
+								 	  <i class="fa fa-check"></i>
+                      
+                    </button>
+							</div>
+
+							<div class="col-6">
+								<button class="btn btn-reject w-100">
+									              <i class="fa fa-remove"></i>
+                        
+                    </button>
+							</div>
+
+						</div>
+					</div>
+				</div><br>
+
+				<div class="card shadow">
+					<div class="card-body">
+						<p class="text-center">ADS</p>
+					</div>
+				</div><br>
+
+				<div class="card shadow">
+					<div class="card-body">
+						<p class="text-center"><i class="fa fa-bug w3-xxlarge"></i></p>
+					</div>
+		
+				</div>
+		</div>
+			</div>
+
+
+</div>
+</div><br>
+
+          
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-top">
+        <h3>Footer</h3>
+    </div>
+
+    <div class="footer-bottom">
+        <p>Powered by <u>w3.css</u></p>
+    </div>
+</footer>
+
+</body>
+</html>
